@@ -4,10 +4,12 @@ from App.apis import init_api
 from App.ext import init_ext
 from App.settings import envs
 from App.views import init_blue
-
+from flask_cors import *
 
 def create_app(env):
     app = Flask(__name__)
+
+    CORS(app, supports_credentials=True)
 
     # 初始化配置
     app.config.from_object(envs.get(env))
