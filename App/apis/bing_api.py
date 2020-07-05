@@ -28,7 +28,12 @@ class BingResource(Resource):
             "msg": "Get Success",
             "data": bing_obj.items
         }
-        return return_fields
+
+        response = return_fields
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Methods'] = 'OPTIONS,HEAD,GET,POST'
+        response.headers['Access-Control-Allow-Headers'] = 'x-requested-with'
+        return response
 
     # 二选一 要么装饰器 要么返回的时候使用marshal
     def post(self):
@@ -42,4 +47,9 @@ class BingResource(Resource):
             "msg": "Get Success",
             "data": bing_obj.items
         }
-        return marshal(return_fields, single_bing_fields)
+
+        response = marshal(return_fields, single_bing_fields)
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Methods'] = 'OPTIONS,HEAD,GET,POST'
+        response.headers['Access-Control-Allow-Headers'] = 'x-requested-with'
+        return response
