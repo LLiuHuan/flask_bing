@@ -9,7 +9,7 @@ from flask_cors import *
 def create_app(env):
     app = Flask(__name__)
 
-    CORS(app, supports_credentials=True)
+    CORS(app, resources=r'/*')
 
     # 初始化配置
     app.config.from_object(envs.get(env))
