@@ -5,7 +5,7 @@ workers = 4
 threads = 2
 
 # 端口 5000
-bind = '0.0.0.0:8080'
+bind = '0.0.0.0:5000'
 
 # 设置守护进程,将进程交给supervisor管理
 daemon = 'false'
