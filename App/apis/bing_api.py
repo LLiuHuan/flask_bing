@@ -5,7 +5,7 @@ from App.models.blue_model import Bing
 
 bing_fields = {
     "copyright": fields.String,
-    "imgUrl": fields.String
+    "imgName": fields.String
 }
 
 single_bing_fields = {
@@ -14,7 +14,15 @@ single_bing_fields = {
     "code": fields.Integer
 }
 
-class BingResource(Resource):
+class TabrResource(Resource):
+    def options(self):
+        print(1234)
+        return {'Allow': '*'}, 200, {'Access-Control-Allow-Origin': '*',
+                                     'Access-Control-Allow-Methods': 'HEAD, OPTIONS, GET, POST, DELETE, PUT',
+                                     'Access-Control-Allow-Headers': 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild',
+                                     }
+
+class BingResource(TabrResource):
     @marshal_with(single_bing_fields)
     def get(self):
         page = int(request.args.get('page')) or 1
@@ -23,13 +31,11 @@ class BingResource(Resource):
             limit = 24
         bing_obj = Bing.query.paginate(page=page, per_page=limit)
 
-        return_fields = {
+        return {
             "code": 200,
             "msg": "Get Success",
             "data": bing_obj.items
         }
-
-        return return_fields
 
     # 二选一 要么装饰器 要么返回的时候使用marshal
     def post(self):
@@ -40,7 +46,7 @@ class BingResource(Resource):
         bing_obj = Bing.query.paginate(page=page, per_page=limit)
         return_fields = {
             "code": 200,
-            "msg": "Get Success",
+            "msg": "Post Success",
             "data": bing_obj.items
         }
 

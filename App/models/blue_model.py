@@ -47,4 +47,6 @@ class Bing(BaseModel):
     wp = db.Column(db.String(10))
     hs = db.Column(db.String(255))
     addTime = db.Column(db.DateTime())
+    imgName = db.Column(db.String(255))
+    imgType = db.Column(db.Integer())
 
