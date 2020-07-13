@@ -37,7 +37,10 @@ class BingResource(TabrResource):
         return {
             "code": 200,
             "msg": "Get Success",
-            "data": bing_obj.items
+            "data": bing_obj.items,
+            "page": bing_obj.page,
+            "pages": bing_obj.pages,
+            "total": bing_obj.total
         }
 
     # 二选一 要么装饰器 要么返回的时候使用marshal
