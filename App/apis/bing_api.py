@@ -11,7 +11,10 @@ bing_fields = {
 single_bing_fields = {
     "data": fields.Nested(bing_fields),
     "msg": fields.String,
-    "code": fields.Integer
+    "code": fields.Integer,
+    "page": fields.Integer,
+    "pages": fields.Integer,
+    "total": fields.Integer
 }
 
 class TabrResource(Resource):
@@ -47,7 +50,10 @@ class BingResource(TabrResource):
         return_fields = {
             "code": 200,
             "msg": "Post Success",
-            "data": bing_obj.items
+            "data": bing_obj.items,
+            "page": bing_obj.page,
+            "pages": bing_obj.pages,
+            "total": bing_obj.total
         }
 
         return marshal(return_fields, single_bing_fields)
