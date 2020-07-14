@@ -32,7 +32,7 @@ class BingResource(TabrResource):
         limit = int(request.args.get('limit')) or 9
         if limit > 24:
             limit = 24
-        bing_obj = Bing.query.paginate(page=page, per_page=limit)
+        bing_obj = Bing.query.order_by(Bing.addTime.desc()).paginate(page=page, per_page=limit)
 
         return {
             "code": 200,
@@ -49,7 +49,7 @@ class BingResource(TabrResource):
         limit = int(request.args.get('limit')) or 9
         if int(limit) > 24:
             limit = 24
-        bing_obj = Bing.query.paginate(page=page, per_page=limit)
+        bing_obj = Bing.query.order_by(Bing.addTime.desc()).paginate(page=page, per_page=limit)
         return_fields = {
             "code": 200,
             "msg": "Post Success",
