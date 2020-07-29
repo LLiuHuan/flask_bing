@@ -1,2 +1,3 @@
 # flask_bing
-flask版本 必应壁纸
+
+flask 版本 必应壁纸接口服务

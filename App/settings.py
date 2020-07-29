@@ -30,7 +30,7 @@ class Config:
     # 是否强制加盐，混淆session
     SESSION_USE_SIGNER = True
     # session的key 越复杂越好
-    SESSION_KEY = "LLiuHuan980724."
+    SESSION_KEY = "elephantnote.com"
     # 设置redis的ip,port,库,有效时间
     # REDIS_HOST = "127.0.0.1"
     # REDIS_PORT = "6379"
@@ -42,7 +42,7 @@ class Config:
     # 保存到redis的session数的名称前缀
     SESSION_KEY_PREFIX = "session:"
     # session保存数据到redis时启用的链接对象
-    SESSION_REDIS = redis.Redis(host='127.0.0.1', port='6379', password='LLiuHuan980724.')  # 用于连接redis的配置
+    SESSION_REDIS = redis.Redis(host='127.0.0.1', port='6379', password='elephantnote.com')  # 用于连接redis的配置
 
 
 class DevelopConfig(Config):
@@ -55,8 +55,8 @@ class DevelopConfig(Config):
         "ENGINE": "mysql",  # 使用数据库
         "DRIVER": "pymysql",  # 数据库驱动器
         "USER": "root",  # 用户
-        "PASSWORD": "LLiuHuan980724.",  # 密码
-        "HOST": "49.233.178.154",  # 连接地址
+        "PASSWORD": "elephantnote.com",  # 密码
+        "HOST": "127.0.0.1",  # 连接地址
         "PORT": 3306,  # 端口
         "NAME": "bing"  # 数据库名称
     }
@@ -74,8 +74,8 @@ class TestingConfig(Config):
         "ENGINE": "mysql",  # 使用数据库
         "DRIVER": "pymysql",  # 数据库驱动器
         "USER": "root",  # 用户
-        "PASSWORD": "LLiuHuan980724.",  # 密码
-        "HOST": "49.233.178.154",  # 连接地址
+        "PASSWORD": "elephantnote.com",  # 密码
+        "HOST": "127.0.0.1",  # 连接地址
         "PORT": 3306,  # 端口
         "NAME": "bing"  # 数据库名称
     }
@@ -91,8 +91,8 @@ class StagingConfig(Config):
         "ENGINE": "mysql",  # 使用数据库
         "DRIVER": "pymysql",  # 数据库驱动器
         "USER": "root",  # 用户
-        "PASSWORD": "LLiuHuan980724.",  # 密码
-        "HOST": "49.233.178.154",  # 连接地址
+        "PASSWORD": "elephantnote.com",  # 密码
+        "HOST": "127.0.0.1",  # 连接地址
         "PORT": 3306,  # 端口
         "NAME": "bing"  # 数据库名称
     }
@@ -108,8 +108,8 @@ class ProductConfig(Config):
         "ENGINE": "mysql",  # 使用数据库
         "DRIVER": "pymysql",  # 数据库驱动器
         "USER": "root",  # 用户
-        "PASSWORD": "LLiuHuan980724.",  # 密码
-        "HOST": "49.233.178.154",  # 连接地址
+        "PASSWORD": "elephantnote.com",  # 密码
+        "HOST": "127.0.0.1",  # 连接地址
         "PORT": 3306,  # 端口
         "NAME": "bing"  # 数据库名称
     }

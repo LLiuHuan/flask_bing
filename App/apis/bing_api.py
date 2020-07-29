@@ -19,7 +19,6 @@ single_bing_fields = {
 
 class TabrResource(Resource):
     def options(self):
-        print(1234)
         return {'Allow': '*'}, 200, {'Access-Control-Allow-Origin': '*',
                                      'Access-Control-Allow-Methods': 'HEAD, OPTIONS, GET, POST, DELETE, PUT',
                                      'Access-Control-Allow-Headers': 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild',
